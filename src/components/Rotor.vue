@@ -1,12 +1,15 @@
 <template>
-  <div>
-    <select class="border  border-black  capitalize">
+  <div class="w-1/3">
+    <p class="text-xl  mb-4">
+      Rotor {{parseInt(selectedRotor) + 1}} loaded
+    </p>
+
+    <select class="border  border-black" v-model="rotor[index]">
       <option
         v-for="i in 26"
         :key="i"
-        :value="rotorValues[0][i - 1]"
       >
-        {{String.fromCharCode(96 + i)}}
+        {{String.fromCharCode(64 + i)}}
       </option>
     </select>
   </div>
@@ -14,18 +17,9 @@
 
 <script>
 export default {
+  props: ['selectedRotor', 'index'],
   data () {
     return {
-      rotorValues: [
-        'EKMFLGDQVZNTOWYHXUSPAIBRCJ',
-        'AJDKSIRUXBLHWTMCQGZNPYFVOE',
-        'BDFHJLCPRTXVZNYEIWGAKMUSQO',
-        'ESOVPZJAYQUIRHXLNFTGKDCMWB',
-        'VZBRGITYUPSDNHLXAWMJQOFECK',
-        'JPGVOUMFYQBENHZRDKASXLICTW',
-        'NZJHGRCXMYSWBOUFAIVLPEKQDT',
-        'FKQHTLXOCBJSPDZRAMEWNIUYGV',
-      ]
     }
   }
 }
